@@ -3,7 +3,7 @@ import React, {memo, useCallback, useState} from 'react';
 import {Button, Input, Screen, Text, TextInput} from '../../../components';
 import {KeyboardAwareScrollView} from '../../../conversions';
 import {useColor} from '../../../hooks';
-import {config} from '../../../utils';
+import {padding} from '../../../utils';
 
 export const Login = memo(function Login() {
   const {goBack} = useNavigation();
@@ -32,7 +32,10 @@ export const Login = memo(function Login() {
     <Screen dropShadow onLeftPress={navBack} title="Login">
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
-        style={{backgroundColor: color.surface, padding: config.padding(4)}}>
+        style={{
+          backgroundColor: color.background.tertiary,
+          padding: padding(4),
+        }}>
         <Text center title="border" type="h3" />
         <Input
           error={form.error}
@@ -61,7 +64,7 @@ export const Login = memo(function Login() {
         />
         <Button
           center
-          color="primary"
+          color="accent"
           emphasis="high"
           onPress={handleSubmit}
           title="complete form"

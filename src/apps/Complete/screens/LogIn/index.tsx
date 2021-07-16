@@ -4,7 +4,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {TextInput as OriginalTextInput} from 'react-native';
 import {Button, Modal, TextInput} from '../../../../components';
 import {useColor} from '../../../../hooks';
-import {config, useRootDispatch} from '../../../../utils';
+import {padding, useRootDispatch} from '../../../../utils';
 import {ModalHeader} from '../../components';
 import {createItem, loadUser} from '../../models';
 import {LandingStackParams} from '../../navigation-types';
@@ -79,7 +79,7 @@ export const LogIn = memo(function LogIn() {
         onSubmitEditing={onSubmitEditing('email')}
         placeholder="Email address"
         returnKeyType="next"
-        style={{marginBottom: config.padding(4)}}
+        style={{marginBottom: padding(4)}}
         textContentType="username"
         value=""
       />
@@ -93,21 +93,21 @@ export const LogIn = memo(function LogIn() {
         placeholder="Password"
         returnKeyType="done"
         secureTextEntry={!state.eye}
-        style={{marginBottom: config.padding(4)}}
+        style={{marginBottom: padding(4)}}
         textContentType="password"
         value=""
       />
       <Button
-        buttonStyle={{marginBottom: config.padding(4)}}
+        buttonStyle={{marginBottom: padding(4)}}
         center
-        color="primary"
+        color="accent"
         lowercase
         onPress={onSecondary}
         title="Forgot password?"
       />
       <Button
         center
-        color="primary"
+        color="accent"
         disable={!state.completeForm}
         emphasis="high"
         onPress={onSubmit}
